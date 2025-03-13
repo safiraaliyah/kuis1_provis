@@ -24,7 +24,8 @@ Aplikasi ini mencakup beberapa halaman utama:
 ![Image](https://github.com/user-attachments/assets/5633a8ca-cfdc-4e69-8ccd-eb6348058aec)
 
 ## Teknologi yang Digunakan
-Flutter (Dart) untuk pengembangan UI
+- Figma untuk rancang ui atau desain aplikasi.
+- Flutter (Dart) untuk pengembangan UI.
 
 This project is a starting point for a Flutter application.
 
