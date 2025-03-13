@@ -369,7 +369,7 @@ class QuizScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(builder: (context) => WishlistScreen()),
                     );
-                  } else if (label == 'Keranjang & Checkout') {
+                  } else if (label == 'Keranjang') {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => ChartScreen()),
