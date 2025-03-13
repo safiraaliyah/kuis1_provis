@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:kuis1_provis/chart/chart_screen.dart';
-import 'package:kuis1_provis/detail_item/detail_item_screen.dart' show DetailItemScreen;
+import 'package:kuis1_provis/checkout/checkout_screen.dart';
+import 'package:kuis1_provis/detail_item/detail_item_screen.dart'
+    show DetailItemScreen;
 import 'package:kuis1_provis/home/home_screen.dart';
 import 'package:kuis1_provis/chat/chat_screen.dart';
+import 'package:kuis1_provis/paket_promosi/paket_promosi_screen.dart';
+import 'package:kuis1_provis/review_rating/review_rating_screen.dart';
+import 'package:kuis1_provis/transaksi/transaksi_screen.dart';
 import 'package:kuis1_provis/wishlist/wishlist_screen.dart';
 
 void main() {
@@ -17,10 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Quiz 1 UI',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-        fontFamily: 'Arial',
-      ),
+      theme: ThemeData(primarySwatch: Colors.green, fontFamily: 'Arial'),
       home: const QuizScreen(),
     );
   }
@@ -30,18 +32,23 @@ class QuizScreen extends StatelessWidget {
   const QuizScreen({super.key});
 
   // Define consistent colors across mobile and desktop
-  static const Color darkGreenColor = Color(0xFF4CAF50); // Warna hijau lebih muda
-  static const Color lightGreenColor = Color(0xFF81C784); // Warna hijau lebih cerah
+  static const Color darkGreenColor = Color(
+    0xFF4CAF50,
+  ); // Warna hijau lebih muda
+  static const Color lightGreenColor = Color(
+    0xFF81C784,
+  ); // Warna hijau lebih cerah
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MediaQuery.of(context).size.width > 600
-          ? AppBar(
-              title: const Text('RENTAL ALAT KEMAH'),
-              backgroundColor: darkGreenColor,
-            )
-          : null,
+      appBar:
+          MediaQuery.of(context).size.width > 600
+              ? AppBar(
+                title: const Text('RENTAL ALAT KEMAH'),
+                backgroundColor: darkGreenColor,
+              )
+              : null,
       body: LayoutBuilder(
         builder: (context, constraints) {
           // Check if we're on desktop or mobile
@@ -68,10 +75,7 @@ class QuizScreen extends StatelessWidget {
               children: [
                 const Text(
                   'Quiz 1 : UI',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 4),
                 Text(
@@ -159,32 +163,37 @@ class QuizScreen extends StatelessWidget {
                   _buildClickableGridItem(
                     context: context,
                     icon: Icons.shopping_cart,
-                    label: 'Keranjang dan Checkout',
+                    label: 'Keranjang',
                     onTap: () {
-                       Navigator.of(context).push(
+                      Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => const ChartScreen(),
                         ),
                       );
                     },
                   ),
-                  _buildClickableGridItem(
+                   _buildClickableGridItem(
                     context: context,
-                    icon: Icons.shopping_bag,
-                    label: 'Pembelian Paket',
+                    icon: Icons.check_outlined,
+                    label: 'Checkout',
                     onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Pembelian Paket clicked')),
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) =>  CheckoutScreen(),
+                        ),
                       );
                     },
                   ),
+                  
                   _buildClickableGridItem(
                     context: context,
                     icon: Icons.reviews,
                     label: 'Review & Rating',
                     onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Review & Rating clicked')),
+                       Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) =>  ReviewRatingScreen(),
+                        ),
                       );
                     },
                   ),
@@ -193,8 +202,10 @@ class QuizScreen extends StatelessWidget {
                     icon: Icons.monitor,
                     label: 'Monitor Pesanan',
                     onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Monitor Pesanan clicked')),
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) =>  TransactionsScreen(),
+                        ),
                       );
                     },
                   ),
@@ -205,6 +216,18 @@ class QuizScreen extends StatelessWidget {
                     onTap: () {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Pengembalian clicked')),
+                      );
+                    },
+                  ),
+                  _buildClickableGridItem(
+                    context: context,
+                    icon: Icons.add_box,
+                    label: 'Pembelian Paket',
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) =>  PaketPromosiScreen(),
+                        ),
                       );
                     },
                   ),
@@ -219,7 +242,7 @@ class QuizScreen extends StatelessWidget {
 
   Widget _buildClickableGridItem({
     required BuildContext context,
-    required IconData icon, 
+    required IconData icon,
     required String label,
     required VoidCallback onTap,
     bool isHeader = false,
@@ -246,10 +269,7 @@ class QuizScreen extends StatelessWidget {
                 const SizedBox(height: 8),
                 const Text(
                   'Quiz 1 : UI',
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 4),
                 Text(
@@ -284,16 +304,16 @@ class QuizScreen extends StatelessWidget {
                     'Rincian Item',
                     'Chat',
                     'Wishlist',
-                    'Keranjang & Checkout',
+                    'Keranjang',
                     'Pembelian Paket',
-                    'Review & Rating'
+                    'Review & Rating',
                   ],
                 ),
                 _buildButtonSection(
                   context,
                   darkGreen: false,
                   buttonLabels: [
-                    'Transaksi',
+                    'Checkout',
                     'Monitor Pesanan',
                     'Pengembalian',
                   ],
@@ -312,49 +332,75 @@ class QuizScreen extends StatelessWidget {
     required List<String> buttonLabels,
   }) {
     return Column(
-      children: buttonLabels.map((label) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4.0),
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: darkGreen ? const Color(0xFF5E7562) : Colors.green[200],
-              foregroundColor: Colors.white,
-              minimumSize: const Size(double.infinity, 48),
-            ),
-            onPressed: () {
-              if (label == 'Halaman Depan') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()),
-                );
-              } else if (label == 'Rincian Item') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => DetailItemScreen()),
-                );
-              } else if (label == 'Chat') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ChatScreen()),
-                );
-              } 
-              else if (label == 'Wishlist') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => WishlistScreen()),
-                );
-              }
-              else if (label == 'Keranjang & Checkout') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ChartScreen()),
-                );
-            }
-            },
-            child: Text(label),
-          ),
-        );
-      }).toList(),
+      children:
+          buttonLabels.map((label) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor:
+                      darkGreen ? const Color(0xFF5E7562) : Colors.green[200],
+                  foregroundColor: Colors.white,
+                  minimumSize: const Size(double.infinity, 48),
+                ),
+                onPressed: () {
+                  if (label == 'Halaman Depan') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                    );
+                  } else if (label == 'Rincian Item') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailItemScreen(),
+                      ),
+                    );
+                  } else if (label == 'Chat') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ChatScreen()),
+                    );
+                  } else if (label == 'Wishlist') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => WishlistScreen()),
+                    );
+                  } else if (label == 'Keranjang & Checkout') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ChartScreen()),
+                    );
+                  }
+                  else if (label == 'Checkout') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CheckoutScreen()),
+                    );
+                  }
+                  else if (label == 'Monitor Pesanan') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TransactionsScreen()),
+                    );
+                  }
+                  else if (label == 'Review & Rating') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ReviewRatingScreen()),
+                    );
+                  }
+                  else if (label == 'Pembelian Paket') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PaketPromosiScreen()),
+                    );
+                  }
+                },
+                child: Text(label),
+              ),
+            );
+          }).toList(),
     );
   }
 
@@ -392,9 +438,9 @@ class QuizScreen extends StatelessWidget {
                 ),
               );
             } else {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('$label clicked')),
-              );
+              ScaffoldMessenger.of(
+                context,
+              ).showSnackBar(SnackBar(content: Text('$label clicked')));
             }
           },
           style: TextButton.styleFrom(
@@ -404,10 +450,7 @@ class QuizScreen extends StatelessWidget {
           ),
           child: Text(
             label,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-            ),
+            style: const TextStyle(color: Colors.white, fontSize: 16),
           ),
         ),
       ),
@@ -440,13 +483,15 @@ class _HoverableGridItemState extends State<HoverableGridItem> {
 
   @override
   Widget build(BuildContext context) {
-    final backgroundColor = widget.useHeaderColor
-        ? QuizScreen.lightGreenColor
-        : QuizScreen.darkGreenColor;
-    
-    final baseColor = widget.isHeader ? QuizScreen.lightGreenColor : backgroundColor;
+    final backgroundColor =
+        widget.useHeaderColor
+            ? QuizScreen.lightGreenColor
+            : QuizScreen.darkGreenColor;
+
+    final baseColor =
+        widget.isHeader ? QuizScreen.lightGreenColor : backgroundColor;
     final hoverColor = baseColor.withOpacity(0.8);
-    
+
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
@@ -458,27 +503,25 @@ class _HoverableGridItemState extends State<HoverableGridItem> {
           decoration: BoxDecoration(
             color: _isHovered ? hoverColor : baseColor,
             borderRadius: BorderRadius.circular(6),
-            boxShadow: _isHovered
-                ? [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
-                      blurRadius: 4,
-                      offset: const Offset(0, 2),
-                    )
-                  ]
-                : null,
-            border: _isHovered
-                ? Border.all(color: Colors.white.withOpacity(0.5), width: 2)
-                : null,
+            boxShadow:
+                _isHovered
+                    ? [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        blurRadius: 4,
+                        offset: const Offset(0, 2),
+                      ),
+                    ]
+                    : null,
+            border:
+                _isHovered
+                    ? Border.all(color: Colors.white.withOpacity(0.5), width: 2)
+                    : null,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                widget.icon,
-                size: 36,
-                color: Colors.white,
-              ),
+              Icon(widget.icon, size: 36, color: Colors.white),
               const SizedBox(height: 8),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -487,7 +530,8 @@ class _HoverableGridItemState extends State<HoverableGridItem> {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 14,
-                    fontWeight: _isHovered ? FontWeight.bold : FontWeight.normal,
+                    fontWeight:
+                        _isHovered ? FontWeight.bold : FontWeight.normal,
                   ),
                   textAlign: TextAlign.center,
                   maxLines: 2,
