@@ -12,13 +12,16 @@ Aplikasi ini mencakup beberapa halaman utama:
 4. Chat dengan Admin - Fitur komunikasi langsung dengan admin, terutama untuk pengguna yang belum berpengalaman dalam berkemah.
 5. Daftar Wishlist - Pengguna dapat menyimpan item favorit mereka untuk disewa nanti.
 6. Keranjang - Memudahkan proses penyewaan dengan sistem pemesanan yang jelas.
-7. Checkout - untuk checkout barang
+7. Checkout - untuk checkout barang yang disewa.
 8. Paket Hemat & Promosi - Menyediakan bundling alat dengan harga lebih hemat serta promo menarik.
 9. Daftar Transaksi - Menampilkan status pemesanan, pengiriman, dan pengembalian alat yang disewa.
+10. Monitor Pesananan - Riwayat Transaksi.
 
 ## UI Figma
 ![Image](https://github.com/user-attachments/assets/81b97a07-8ac5-4b4d-b580-1ac370ea5268)
 ![Image](https://github.com/user-attachments/assets/27cc0026-99a3-4cb5-8fe4-d27f85fbb111)
+![Image](https://github.com/user-attachments/assets/06948b1e-9e7e-4d08-8bcc-3752100388e6)
+![Image](https://github.com/user-attachments/assets/5633a8ca-cfdc-4e69-8ccd-eb6348058aec)
 
 ## Teknologi yang Digunakan
 Flutter (Dart) untuk pengembangan UI
