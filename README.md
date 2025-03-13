@@ -1,8 +1,23 @@
-# kuis1_provis
+# Aplikasi Penyewaan Alat Perkemahan - Flutter UI
 
-A new Flutter project.
+## Deskripsi
 
-## Getting Started
+Aplikasi ini merupakan proyek Flutter yang dirancang untuk menyediakan tampilan antarmuka pengguna (UI) bagi aplikasi penyewaan alat perkemahan. Dengan desain yang responsif dan ramah pengguna, aplikasi ini membantu pengguna untuk memilih, menyewa, dan mengelola alat-alat perkemahan dengan mudah.
+
+## Fitur
+Aplikasi ini mencakup beberapa halaman utama:
+1. Halaman Depan - Menampilkan daftar alat yang tersedia, kategori alat, serta penawaran spesial.
+2. Detail Item - Menampilkan informasi lengkap tentang alat, termasuk deskripsi, harga, dan ketersediaan.
+3. Review dan Rating - Memungkinkan pengguna melihat ulasan serta rating dari penyewa sebelumnya.
+4. Chat dengan Admin - Fitur komunikasi langsung dengan admin, terutama untuk pengguna yang belum berpengalaman dalam berkemah.
+5. Daftar Wishlist - Pengguna dapat menyimpan item favorit mereka untuk disewa nanti.
+6. Keranjang - Memudahkan proses penyewaan dengan sistem pemesanan yang jelas.
+7. Checkout - untuk checkout barang
+8. Paket Hemat & Promosi - Menyediakan bundling alat dengan harga lebih hemat serta promo menarik.
+9. Daftar Transaksi - Menampilkan status pemesanan, pengiriman, dan pengembalian alat yang disewa.
+
+## Teknologi yang Digunakan
+Flutter (Dart) untuk pengembangan UI
 
 This project is a starting point for a Flutter application.
 
