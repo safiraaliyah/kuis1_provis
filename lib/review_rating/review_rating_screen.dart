@@ -31,7 +31,7 @@ class ReviewRatingScreen extends StatelessWidget {
               elevation: 0,
               centerTitle: true,
               title: const Text(
-                'Product Reviews',
+                'Product Review',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
