@@ -16,6 +16,10 @@ Aplikasi ini mencakup beberapa halaman utama:
 8. Paket Hemat & Promosi - Menyediakan bundling alat dengan harga lebih hemat serta promo menarik.
 9. Daftar Transaksi - Menampilkan status pemesanan, pengiriman, dan pengembalian alat yang disewa.
 
+## UI Figma
+![Image](https://github.com/user-attachments/assets/81b97a07-8ac5-4b4d-b580-1ac370ea5268)
+![Image](https://github.com/user-attachments/assets/27cc0026-99a3-4cb5-8fe4-d27f85fbb111)
+
 ## Teknologi yang Digunakan
 Flutter (Dart) untuk pengembangan UI
 
