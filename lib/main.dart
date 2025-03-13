@@ -6,6 +6,7 @@ import 'package:kuis1_provis/detail_item/detail_item_screen.dart'
 import 'package:kuis1_provis/home/home_screen.dart';
 import 'package:kuis1_provis/chat/chat_screen.dart';
 import 'package:kuis1_provis/paket_promosi/paket_promosi_screen.dart';
+import 'package:kuis1_provis/pengembalian/pengembalian_screen.dart';
 import 'package:kuis1_provis/review_rating/review_rating_screen.dart';
 import 'package:kuis1_provis/transaksi/transaksi_screen.dart';
 import 'package:kuis1_provis/wishlist/wishlist_screen.dart';
@@ -214,8 +215,10 @@ class QuizScreen extends StatelessWidget {
                     icon: Icons.add_box,
                     label: 'Pengembalian',
                     onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Pengembalian clicked')),
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) =>  PengembalianScreen(),
+                        ),
                       );
                     },
                   ),
@@ -394,6 +397,12 @@ class QuizScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => PaketPromosiScreen()),
+                    );
+                  }
+                  else if (label == 'Pengembalian') {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => PengembalianScreen()),
                     );
                   }
                 },
