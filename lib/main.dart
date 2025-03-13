@@ -6,7 +6,10 @@ import 'package:kuis1_provis/detail_item/detail_item_screen.dart'
 import 'package:kuis1_provis/home/home_screen.dart';
 import 'package:kuis1_provis/chat/chat_screen.dart';
 import 'package:kuis1_provis/paket_promosi/paket_promosi_screen.dart';
+<<<<<<< HEAD
 import 'package:kuis1_provis/pengembalian/pengembalian_screen.dart';
+=======
+>>>>>>> e967f0a (feat(sisa_halaman): sisa halamannya)
 import 'package:kuis1_provis/review_rating/review_rating_screen.dart';
 import 'package:kuis1_provis/transaksi/transaksi_screen.dart';
 import 'package:kuis1_provis/wishlist/wishlist_screen.dart';
@@ -234,6 +237,18 @@ class QuizScreen extends StatelessWidget {
                       );
                     },
                   ),
+                  _buildClickableGridItem(
+                    context: context,
+                    icon: Icons.add_box,
+                    label: 'Pembelian Paket',
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) =>  PaketPromosiScreen(),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
@@ -369,7 +384,11 @@ class QuizScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(builder: (context) => WishlistScreen()),
                     );
+<<<<<<< HEAD
                   } else if (label == 'Keranjang') {
+=======
+                  } else if (label == 'Keranjang & Checkout') {
+>>>>>>> e967f0a (feat(sisa_halaman): sisa halamannya)
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => ChartScreen()),
@@ -399,12 +418,15 @@ class QuizScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => PaketPromosiScreen()),
                     );
                   }
+<<<<<<< HEAD
                   else if (label == 'Pengembalian') {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => PengembalianScreen()),
                     );
                   }
+=======
+>>>>>>> e967f0a (feat(sisa_halaman): sisa halamannya)
                 },
                 child: Text(label),
               ),

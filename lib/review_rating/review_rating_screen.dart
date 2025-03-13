@@ -177,7 +177,11 @@ Widget _buildDesktopSideNavigation() {
         ),
         const SizedBox(height: 16),
         const Text(
+<<<<<<< HEAD
           'NASAP CAMPS',
+=======
+          'NASAP CAMP',
+>>>>>>> e967f0a (feat(sisa_halaman): sisa halamannya)
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         const SizedBox(height: 48),
