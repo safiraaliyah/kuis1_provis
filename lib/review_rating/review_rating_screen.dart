@@ -50,7 +50,7 @@ class _DetailItemScreenState extends State<DetailItemScreen> {
             children: [
               Center(
                 child: Image.network(
-                  'https://i.imgur.com/Yd6RM7h.png',
+                  'tenda1.png',
                   fit: BoxFit.contain,
                 ),
               ),
