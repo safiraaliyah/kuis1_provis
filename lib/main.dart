@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:kuis1_provis/chart/chart_screen.dart';
+import 'package:kuis1_provis/detail_item/detail_item_screen.dart' show DetailItemScreen;
+import 'package:kuis1_provis/home/home_screen.dart';
+import 'package:kuis1_provis/chat/chat_screen.dart';
+import 'package:kuis1_provis/wishlist/wishlist_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,116 +12,492 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Quiz 1 UI',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.green,
+        fontFamily: 'Arial',
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const QuizScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class QuizScreen extends StatelessWidget {
+  const QuizScreen({super.key});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  // Define consistent colors across mobile and desktop
+  static const Color darkGreenColor = Color(0xFF4CAF50); // Warna hijau lebih muda
+  static const Color lightGreenColor = Color(0xFF81C784); // Warna hijau lebih cerah
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+      appBar: MediaQuery.of(context).size.width > 600
+          ? AppBar(
+              title: const Text('RENTAL ALAT KEMAH'),
+              backgroundColor: darkGreenColor,
+            )
+          : null,
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          // Check if we're on desktop or mobile
+          final isDesktop = constraints.maxWidth > 600;
+
+          if (isDesktop) {
+            return _buildDesktopLayout(context);
+          } else {
+            return _buildMobileLayout(context);
+          }
+        },
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+    );
+  }
+
+  Widget _buildDesktopLayout(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                const Text(
+                  'Quiz 1 : UI',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'No. Kelompok Praktikum : 54',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black.withOpacity(0.7),
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Nashwa Nadria Futi 2308130',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black.withOpacity(0.7),
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Safira Aliyah Azmi 2309209',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black.withOpacity(0.7),
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: GridView.count(
+                crossAxisCount: 4,
+                mainAxisSpacing: 16.0,
+                crossAxisSpacing: 16.0,
+                children: [
+                  _buildClickableGridItem(
+                    context: context,
+                    icon: Icons.home,
+                    label: 'Halaman Depan',
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                  _buildClickableGridItem(
+                    context: context,
+                    icon: Icons.list_alt,
+                    label: 'Rincian Item',
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const DetailItemScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                  _buildClickableGridItem(
+                    context: context,
+                    icon: Icons.chat,
+                    label: 'Chat',
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const ChatScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                  _buildClickableGridItem(
+                    context: context,
+                    icon: Icons.favorite,
+                    label: 'Wishlist',
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const WishlistScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                  _buildClickableGridItem(
+                    context: context,
+                    icon: Icons.shopping_cart,
+                    label: 'Keranjang dan Checkout',
+                    onTap: () {
+                       Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const ChartScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                  _buildClickableGridItem(
+                    context: context,
+                    icon: Icons.shopping_bag,
+                    label: 'Pembelian Paket',
+                    onTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Pembelian Paket clicked')),
+                      );
+                    },
+                  ),
+                  _buildClickableGridItem(
+                    context: context,
+                    icon: Icons.reviews,
+                    label: 'Review & Rating',
+                    onTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Review & Rating clicked')),
+                      );
+                    },
+                  ),
+                  _buildClickableGridItem(
+                    context: context,
+                    icon: Icons.monitor,
+                    label: 'Monitor Pesanan',
+                    onTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Monitor Pesanan clicked')),
+                      );
+                    },
+                  ),
+                  _buildClickableGridItem(
+                    context: context,
+                    icon: Icons.add_box,
+                    label: 'Pengembalian',
+                    onTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Pengembalian clicked')),
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildClickableGridItem({
+    required BuildContext context,
+    required IconData icon, 
+    required String label,
+    required VoidCallback onTap,
+    bool isHeader = false,
+    bool useHeaderColor = false,
+  }) {
+    return HoverableGridItem(
+      icon: icon,
+      label: label,
+      isHeader: isHeader,
+      useHeaderColor: useHeaderColor,
+      onTap: onTap,
+    );
+  }
+
+  Widget _buildMobileLayout(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          color: Colors.white,
+          padding: const EdgeInsets.all(16.0),
+          child: SafeArea(
+            child: Column(
+              children: [
+                const SizedBox(height: 8),
+                const Text(
+                  'Quiz 1 : UI',
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'No. Kelompok Praktikum : 54',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.black.withOpacity(0.7),
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Nashwa Nadria Futi 2308130',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.black.withOpacity(0.7),
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Safira Aliyah Azmi 2309209',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.black.withOpacity(0.7),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                _buildButtonSection(
+                  context,
+                  darkGreen: true,
+                  buttonLabels: [
+                    'Halaman Depan',
+                    'Rincian Item',
+                    'Chat',
+                    'Wishlist',
+                    'Keranjang & Checkout',
+                    'Pembelian Paket',
+                    'Review & Rating'
+                  ],
+                ),
+                _buildButtonSection(
+                  context,
+                  darkGreen: false,
+                  buttonLabels: [
+                    'Transaksi',
+                    'Monitor Pesanan',
+                    'Pengembalian',
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildButtonSection(
+    BuildContext context, {
+    required bool darkGreen,
+    required List<String> buttonLabels,
+  }) {
+    return Column(
+      children: buttonLabels.map((label) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 4.0),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: darkGreen ? const Color(0xFF5E7562) : Colors.green[200],
+              foregroundColor: Colors.white,
+              minimumSize: const Size(double.infinity, 48),
+            ),
+            onPressed: () {
+              if (label == 'Halaman Depan') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                );
+              } else if (label == 'Rincian Item') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DetailItemScreen()),
+                );
+              } else if (label == 'Chat') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChatScreen()),
+                );
+              } 
+              else if (label == 'Wishlist') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => WishlistScreen()),
+                );
+              }
+              else if (label == 'Keranjang & Checkout') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChartScreen()),
+                );
+            }
+            },
+            child: Text(label),
+          ),
+        );
+      }).toList(),
+    );
+  }
+
+  Widget _buildButton(BuildContext context, String label) {
+    if (label == 'Transaksi') {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: Text(
+          label,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      );
+    }
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+      child: Container(
+        width: double.infinity,
+        height: 44,
+        decoration: BoxDecoration(
+          color: darkGreenColor,
+          borderRadius: BorderRadius.circular(6),
+        ),
+        child: TextButton(
+          onPressed: () {
+            if (label == 'Rincian Item') {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const DetailItemScreen(),
+                ),
+              );
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('$label clicked')),
+              );
+            }
+          },
+          style: TextButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(6),
+            ),
+          ),
+          child: Text(
+            label,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+            ),
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class HoverableGridItem extends StatefulWidget {
+  final IconData icon;
+  final String label;
+  final bool isHeader;
+  final bool useHeaderColor;
+  final VoidCallback onTap;
+
+  const HoverableGridItem({
+    Key? key,
+    required this.icon,
+    required this.label,
+    this.isHeader = false,
+    this.useHeaderColor = false,
+    required this.onTap,
+  }) : super(key: key);
+
+  @override
+  State<HoverableGridItem> createState() => _HoverableGridItemState();
+}
+
+class _HoverableGridItemState extends State<HoverableGridItem> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final backgroundColor = widget.useHeaderColor
+        ? QuizScreen.lightGreenColor
+        : QuizScreen.darkGreenColor;
+    
+    final baseColor = widget.isHeader ? QuizScreen.lightGreenColor : backgroundColor;
+    final hoverColor = baseColor.withOpacity(0.8);
+    
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          decoration: BoxDecoration(
+            color: _isHovered ? hoverColor : baseColor,
+            borderRadius: BorderRadius.circular(6),
+            boxShadow: _isHovered
+                ? [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.3),
+                      blurRadius: 4,
+                      offset: const Offset(0, 2),
+                    )
+                  ]
+                : null,
+            border: _isHovered
+                ? Border.all(color: Colors.white.withOpacity(0.5), width: 2)
+                : null,
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                widget.icon,
+                size: 36,
+                color: Colors.white,
+              ),
+              const SizedBox(height: 8),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Text(
+                  widget.label,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontWeight: _isHovered ? FontWeight.bold : FontWeight.normal,
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
