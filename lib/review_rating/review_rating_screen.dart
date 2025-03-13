@@ -177,7 +177,7 @@ Widget _buildDesktopSideNavigation() {
         ),
         const SizedBox(height: 16),
         const Text(
-          'NASAP CAMP',
+          'NASAP CAMPS',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         const SizedBox(height: 48),
