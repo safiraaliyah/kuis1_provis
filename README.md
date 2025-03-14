@@ -23,6 +23,15 @@ Aplikasi ini mencakup beberapa halaman utama:
 ![Image](https://github.com/user-attachments/assets/06948b1e-9e7e-4d08-8bcc-3752100388e6)
 ![Image](https://github.com/user-attachments/assets/5633a8ca-cfdc-4e69-8ccd-eb6348058aec)
 
+## Tampilan Aplikasi Versi Dekstop
+1. Halaman navigasi
+![Image](https://github.com/user-attachments/assets/70fa7a0b-b71c-4ac0-98de-aed411ad56d9)
+
+3. Halaman utama
+![Image](https://github.com/user-attachments/assets/a696ddbc-3ed6-48bd-b1f2-fc3e979ab001)
+
+4. Halaman rincian item
+![Image](https://github.com/user-attachments/assets/154a006e-7f81-4ea0-9c51-e60fe38fbfc4)
 ## Teknologi yang Digunakan
 - Figma untuk rancang ui atau desain aplikasi.
 - Flutter (Dart) untuk pengembangan UI.
