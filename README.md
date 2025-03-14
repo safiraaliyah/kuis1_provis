@@ -1,5 +1,9 @@
 # Aplikasi Penyewaan Alat Perkemahan - Flutter UI
 
+KELOMPOK 54
+NASHWA NADRIA FUTI 2308130
+SAFIRA ALIYAH AZMI 2309209
+
 ## Deskripsi
 
 Aplikasi ini merupakan proyek Flutter yang dirancang untuk menyediakan tampilan antarmuka pengguna (UI) bagi aplikasi penyewaan alat perkemahan. Dengan desain yang responsif dan ramah pengguna, aplikasi ini membantu pengguna untuk memilih, menyewa, dan mengelola alat-alat perkemahan dengan mudah.
@@ -56,6 +60,29 @@ Aplikasi ini mencakup beberapa halaman utama:
 
 14. Halaman pembelian paket
 ![Image](https://github.com/user-attachments/assets/7180d739-c749-474f-b029-767ba686ca9a)
+
+## Tampilan Aplikasi Versi Mobile
+![Image](https://github.com/user-attachments/assets/ecb3a8c8-191b-4097-a312-7471c5dea659)
+
+![Image](https://github.com/user-attachments/assets/a5841a3f-b134-47f1-a397-1658ea08d6aa)
+
+![Image](https://github.com/user-attachments/assets/9b44571e-cb55-4daa-b219-34ea7426be35)
+
+![Image](https://github.com/user-attachments/assets/9eddfba6-810a-45d8-8b51-5e7bdaa5119d)
+
+![Image](https://github.com/user-attachments/assets/a0ddf895-20f1-4206-b7f5-b32397e04b6e)
+
+![Image](https://github.com/user-attachments/assets/f1a3d776-f355-4f40-b3cd-d87d74034203)
+
+![Image](https://github.com/user-attachments/assets/e3d4103c-891f-4e3a-9975-2ca9cda7c5e8)
+
+![Image](https://github.com/user-attachments/assets/865920d0-a560-4f27-9369-832d89283426)
+
+![Image](https://github.com/user-attachments/assets/6e486483-06ff-448b-a490-cb401e9c6bd6)
+
+![Image](https://github.com/user-attachments/assets/6363b916-d480-4fa1-af9a-019abd61ee27)
+
+![Image](https://github.com/user-attachments/assets/e3eb22d2-1709-4455-b760-0867e6817ffd)
 
 ## Teknologi yang Digunakan
 - Figma untuk rancang ui atau desain aplikasi.
