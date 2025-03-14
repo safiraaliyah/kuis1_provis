@@ -32,6 +32,19 @@ Aplikasi ini mencakup beberapa halaman utama:
 
 4. Halaman rincian item
 ![Image](https://github.com/user-attachments/assets/154a006e-7f81-4ea0-9c51-e60fe38fbfc4)
+
+5. Halaman wishlist
+![Image](https://github.com/user-attachments/assets/b98e096a-c0a8-4a1b-8543-dc00cda6d9e8)
+
+7. Halaman keranjang
+![Image](https://github.com/user-attachments/assets/1684ad75-18c2-4703-a54c-9014b537fb9d)
+
+8. Halaman checkout
+![Image](https://github.com/user-attachments/assets/d7f1e919-d389-4d4c-bbd5-12c4218f8c70)
+
+9. Halaman review dan rating
+![Image](https://github.com/user-attachments/assets/f6b3a7ba-1e43-4dc8-9c2b-3df54ec74b10)
+
 ## Teknologi yang Digunakan
 - Figma untuk rancang ui atau desain aplikasi.
 - Flutter (Dart) untuk pengembangan UI.
