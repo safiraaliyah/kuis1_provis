@@ -54,6 +54,9 @@ Aplikasi ini mencakup beberapa halaman utama:
 13. Halaman chat
 ![Image](https://github.com/user-attachments/assets/23f43048-a79a-4986-9f6a-d6cdc11c905f)
 
+14. Halaman pembelian paket
+![Image](https://github.com/user-attachments/assets/7180d739-c749-474f-b029-767ba686ca9a)
+
 ## Teknologi yang Digunakan
 - Figma untuk rancang ui atau desain aplikasi.
 - Flutter (Dart) untuk pengembangan UI.
