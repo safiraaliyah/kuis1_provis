@@ -45,6 +45,12 @@ Aplikasi ini mencakup beberapa halaman utama:
 9. Halaman review dan rating
 ![Image](https://github.com/user-attachments/assets/f6b3a7ba-1e43-4dc8-9c2b-3df54ec74b10)
 
+10. Halaman transaksi
+![Image](https://github.com/user-attachments/assets/7dd10af7-dbb6-44ce-927c-7e59e62ac15c)
+
+12. Halaman Pengembalian
+![Image](https://github.com/user-attachments/assets/f47f090a-b951-4184-9bfe-f6c24813a01b)
+
 ## Teknologi yang Digunakan
 - Figma untuk rancang ui atau desain aplikasi.
 - Flutter (Dart) untuk pengembangan UI.
